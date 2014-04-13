@@ -71,7 +71,10 @@ public class SessionContextInterceptor implements HandlerInterceptor,Application
 			SessionContext.setContext(o);
 		 }
 	        String oldCompanyId = UserUtils.getUserCompanyId();
-		 String newCompanyId = SessionContext.getContext().get(SessionContext.USER_COMPANY_ID_KEY);
+		 String newCompanyId = oldCompanyId;
+		 if(SessionContext.getContext() != null){
+			 newCompanyId = SessionContext.getContext().get(SessionContext.USER_COMPANY_ID_KEY);
+		 }
 		 if(UserUtils.getCurrentUser() != null && !UserUtils.getCurrentUser().getCompanies().contains(newCompanyId)){
 			 SessionContext.getContext().put(SessionContext.USER_COMPANY_ID_KEY,oldCompanyId);
 			 newCompanyId = SessionContext.getContext().get(SessionContext.USER_COMPANY_ID_KEY);
