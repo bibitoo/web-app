@@ -76,7 +76,7 @@
 				/rpc/rest/** = perms[rpc:invoke], authc
 				/org/**/update/** = rolesOrFilter[orgadmin,admin]
 				/org/**/create = rolesOrFilter[orgadmin,admin]
-				/org/authorization/** = rolesOrFilter[authorize,admin]
+				/core/authorization/** = rolesOrFilter[authorize,admin]
 				/org/organization/listdeleted** =  rolesOrFilter[orgadmin,admin]
 				/org/organization/deleteAll** =  rolesOrFilter[orgadmin,admin]
 				/org/organization/treejson** =  rolesOrFilter[orgadmin,admin,orguser]
