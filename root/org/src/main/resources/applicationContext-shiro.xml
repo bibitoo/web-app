@@ -50,8 +50,8 @@
 	<!-- Shiro Filter -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl" value="/login" />
-<!-- 		<property name="loginUrl" value="${sso.loginUrl}" />   -->
+<!-- 		<property name="loginUrl" value="/login" /> -->
+		<property name="loginUrl" value="${sso.loginUrl}" />  
 		<property name="successUrl" value="/" />
 		<property name="filters">
            <map>
