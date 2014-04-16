@@ -166,7 +166,7 @@ public class UserService extends BaseService<User> implements IUserService, Appl
 			return;
 		}
 		user.getRoles().clear();
-		User sysuser = get(user.id);
+		User sysuser = findUserByLoginName(user.getLoginName());
 		user.getRoles().addAll(sysuser.getRoleList());
 		addRoles(user);
 		for(Iterator<IUserRoleAware> it = ctx.getBeansOfType(IUserRoleAware.class).values().iterator(); it.hasNext(); ){
