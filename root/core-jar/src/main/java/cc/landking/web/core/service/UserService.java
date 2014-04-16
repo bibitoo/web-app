@@ -1,5 +1,6 @@
 package cc.landking.web.core.service;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -211,7 +212,13 @@ public class UserService extends BaseService<User> implements IUserService, Appl
 	}
 	public  Map<String,String>  findCurrentUserCompanies(){
 
-		return getOrganizationSpiService().findCompanies(UserUtils.getCurrentUserId());
+		List<OrganizationData> companies = getOrganizationSpiService().findCompanies(UserUtils.getCurrentUserId());
+		Map<String,String> retval = new HashMap<String,String>();
+		for(Iterator<OrganizationData> it = companies.iterator();it.hasNext();){
+			OrganizationData data = it.next();
+			retval.put(data.getId(), data.getName());
+		}
+		return retval;
 	}
 	private OrganizationSpiService getOrganizationSpiService(){
 		return ctx.getBean(OrganizationSpiService.class);

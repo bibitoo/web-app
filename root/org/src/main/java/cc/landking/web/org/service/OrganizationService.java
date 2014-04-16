@@ -256,13 +256,13 @@ public class OrganizationService extends TreeService<Organization> implements  I
 	}
 
 
-	public HashMap<String,String> findCompanies(String userid) {
-		HashMap<String,String> retval = new HashMap<String,String>();
+	public List<OrganizationData> findCompanies(String userid) {
+		List<OrganizationData> retval = new ArrayList<OrganizationData>();
 		List<Company> userCompanies = employeeService.findCompanyByUserId(userid);
 		if(userCompanies != null && userCompanies.size()>0){
 			for(Iterator<Company> it = userCompanies.iterator();it.hasNext();){
 				Company company = it.next();
-				retval.put(company.getId(),company.getName());
+				retval.add(company.getOrganizationData());
 			}
 		}
 

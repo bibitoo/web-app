@@ -38,7 +38,7 @@ public class OrganizationSpiServiceWSImp extends SpringBeanAutowiringSupport
 	}
 
 
-	public HashMap<String, String> findCompanies(String userid) {
+	public List<OrganizationData> findCompanies(String userid) {
 		return organizationService.findCompanies(userid);
 	}
 
