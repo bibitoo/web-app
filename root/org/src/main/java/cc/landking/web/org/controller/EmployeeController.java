@@ -97,7 +97,7 @@ public class EmployeeController extends BaseOrganizationController<Employee> {
 		     }else{
 		    	 r = r + "?";
 		     }
-		     r = r + "_lkc_ctx" + lkc_ctx;
+		     r = r + "_lkc_ctx=" + lkc_ctx;
 		        
 			springModel.addAttribute("redirect", r);
 		}else{
