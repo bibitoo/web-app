@@ -1,5 +1,7 @@
 package cc.landking.web.org.controller;
 
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
@@ -18,12 +20,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import cc.landking.web.core.entity.User;
 import cc.landking.web.core.filter.SessionContext;
 import cc.landking.web.core.service.AuthorizationService;
 import cc.landking.web.core.service.BaseService;
 import cc.landking.web.core.service.IUserService;
 import cc.landking.web.core.service.LandkingUser;
+import cc.landking.web.core.utils.Encodes;
 import cc.landking.web.org.entity.Department;
 import cc.landking.web.org.entity.Employee;
 import cc.landking.web.org.entity.Group;
@@ -57,6 +62,10 @@ public class EmployeeController extends BaseOrganizationController<Employee> {
 
 	@Autowired
 	private OrganizationService organizationService;
+	
+	@Autowired
+	private ObjectMapper objectMapper;
+
 
 	@Override
 	public BaseService<Employee> getService() {
@@ -71,7 +80,7 @@ public class EmployeeController extends BaseOrganizationController<Employee> {
 	public String switchCompany(
 			@RequestParam(value = "companyId", required = false) String companyId,
 			@RequestParam(value = "r", required = false) String r,
-			RedirectAttributes redirectAttributes, Model springModel) {
+			RedirectAttributes redirectAttributes, Model springModel) throws Exception {
 		LandkingUser user = (LandkingUser) SecurityUtils.getSubject().getPrincipal();
 		if(companyId != null && !companyId.equals(user.getCompanyId())){
 			user.setCompanyId(companyId);
@@ -79,6 +88,17 @@ public class EmployeeController extends BaseOrganizationController<Employee> {
 			SessionContext.getContext().put(SessionContext.USER_COMPANY_ID_KEY, companyId);
 		}
 		if(r!=null && r.trim().length()>0){
+			 StringWriter stringWriter = new StringWriter();
+				
+			 objectMapper.writeValue(stringWriter, SessionContext.getContext());
+		     String lkc_ctx = Encodes.encodeBase64(stringWriter.toString().getBytes("UTF-8"));
+		     if(r.indexOf("?")>0){
+		    	 r = r + "&";
+		     }else{
+		    	 r = r + "?";
+		     }
+		     r = r + "_lkc_ctx" + lkc_ctx;
+		        
 			springModel.addAttribute("redirect", r);
 		}else{
 			springModel.addAttribute("redirect", getContext().getContextPath());
