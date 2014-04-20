@@ -43,7 +43,7 @@
 					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
 					<overlays>
 						<overlay>
-							<groupId>com.doframe.web</groupId>
+							<groupId>cc.landking.web</groupId>
 							<artifactId>core</artifactId>
 						</overlay>
 					</overlays>
