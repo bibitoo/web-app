@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>cc.landking.web</groupId>
-    <artifactId>root</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-  <groupId>cc.landking.web</groupId>
-  <artifactId>core-jar</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <name>core-jar</name>
-  <url>http://maven.apache.org</url>
-  <properties>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cc.landking.web</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>cc.landking.web</groupId>
+	<artifactId>core-jar</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Landking Web App Core Class</name>
+	<url>http://maven.apache.org</url>
+	<properties>
 		<jackson_version>2.3.2</jackson_version>
 		<spring_data_version>1.5.0.RELEASE</spring_data_version>
 		<shiro_version>1.2.3</shiro_version>
@@ -21,13 +22,13 @@
 
 		<cxf_version>2.7.10</cxf_version>
 		<servlet_version>2.5</servlet_version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  <dependency>
-  <groupId>cc.landking.web</groupId>
-  <artifactId>org-api</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>cc.landking.web</groupId>
+			<artifactId>org-api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
@@ -78,17 +79,17 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-		
- <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-        <version>${cxf_version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-transports-http</artifactId>
-        <version>${cxf_version}</version>
-    </dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf_version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf_version}</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -251,5 +252,5 @@
 			<version>${spring_version}</version>
 		</dependency>
 
-  </dependencies>
+	</dependencies>
 </project>

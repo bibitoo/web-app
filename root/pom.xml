@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>cc.landking.web</groupId>
-  <artifactId>root</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>DoFrameWeb</name>
-  <modules>
-  	<module>core</module>
-    <module>org</module>
-    <module>org-api</module>
-    <module>core-jar</module>
-    <module>att</module>
-    <module>file-api</module>
-  </modules>
-  <distributionManagement>
-    <repository>
-      <id>nexus-releases</id>
-      <name>Internal Releases</name>
-      <url>http://sunqiyang.net:8088/nexus/content/repositories/releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <name>Internal SnapShots</name>
-      <url>http://sunqiyang.net:8088/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cc.landking.web</groupId>
+	<artifactId>root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>LandkingWeb</name>
+	<modules>
+		<module>core</module>
+		<module>org</module>
+		<module>org-api</module>
+		<module>core-jar</module>
+		<module>file-api</module>
+	</modules>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Internal Releases</name>
+			<url>http://sunqiyang.net:8088/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Internal SnapShots</name>
+			<url>http://sunqiyang.net:8088/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
