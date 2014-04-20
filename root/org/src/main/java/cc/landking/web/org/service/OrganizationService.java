@@ -214,6 +214,8 @@ public class OrganizationService extends TreeService<Organization> implements  I
 			}
 			suser.setOrganizations(organizations);
 			
+		}else{
+			suser.setRoles(user.getRoleList());
 		}
 		return suser;
 	}
